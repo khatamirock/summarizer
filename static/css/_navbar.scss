@@ -1,0 +1,101 @@
+@import 'colors';
+@import 'media_query';
+
+
+$same-width: 30px;
+
+@mixin samePad($width) {
+
+    padding-left: $width ;
+    padding-right: $width;
+    align-items: center;
+}
+
+%ali-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.items-nav {
+    opacity: 0;
+    color: $dark;
+    font-size: 50px;
+    text-decoration: none;
+    @include samePad(50%);
+
+}
+
+.navbar {
+    background: $green;
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    @include samePad($same-width);
+    position: relative;
+
+    &__logo {
+        color: $dark-navy;
+        font-family: 'Press Start 2P', cursive;
+
+        font-weight: bold;
+        font-size: 30px;
+        @extend %ali-center;
+
+
+    }
+
+    &__bars {
+        opacity: 0;
+
+        @include tablet {
+            opacity: 1;
+            position: absolute;
+
+            right: 10%;
+            font-size: 140%;
+
+            &:hover {
+                color: $dark-navy;
+            }
+        }
+    }
+
+    &__menu {
+        @include tablet {
+            display: none;
+        }
+
+        &__links {
+            color: $dark;
+            text-decoration: none;
+            padding: 10px;
+            font-family: 'Righteous', cursive;
+            font-weight: 600;
+
+            &:hover {
+                color: $navy;
+                transition: color 0.4s ease-in-out;
+                // border: 3px solid $navy;
+                // border-radius: 10%;
+                // border-style: dotted;
+
+            }
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}

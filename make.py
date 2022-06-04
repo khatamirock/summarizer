@@ -1,8 +1,8 @@
-from flask import Flask, jsonify, request, make_response, url_for, redirect
+from flask import Flask, jsonify, request, make_response, url_for, redirect, render_template
 import re
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-
+import os
 
 sent = ''
 
@@ -129,4 +129,11 @@ def name(name):
         '''.format(name)
 
 
-app.run(debug=True)
+@app.route('/info')
+def render():
+    return render_template('info.html')
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
+    # app.run(debug=True)
