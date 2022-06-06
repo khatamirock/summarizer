@@ -129,11 +129,16 @@ def name(name):
         '''.format(name)
 
 
+@app.route('/instruct')
+def instruct():
+    return render_template('insruct.html')
+
+
 @app.route('/info')
 def render():
     return render_template('info.html')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
-    # app.run(debug=True)
+    # app.run(host='0.0.0.0', port=8080)
+    app.run(debug=True)
