@@ -1,6 +1,21 @@
 @import 'navbar';
 @import 'colors';
 
+%makeGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+
+}
+
+
+%makeFlex {
+    display: flex;
+    justify-content: center;
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,24 +25,78 @@
 .hero {
     background: $lite;
 
+    // instruction area
+    .instruction {
+        background: $dark;
+        color: $white;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        margin: 1rem;
+    }
+
+    .points {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        align-items: center;
+        height: 70vh;
 
 
 
+        &__num {
+
+
+            color: $dark-navy ;
+            font-family: 'La Belle Aurore', cursive;
+            padding: 1rem;
+            text-align: center;
+
+            font-weight: bold;
 
 
 
+            h1 {
+                font-size: 6.5rem !important;
 
+                margin-bottom: 0 !important;
+                font-weight: bold;
+
+                // #reverse {
+                //     transform: rotate(0.5turn);
+                //     margin-bottom: 0 !important;
+                //     font-weight: bold;
+                // }
+
+                // &_rotate {
+                //     transform: rotate(0.5turn);
+                // }
+
+            }
+
+            h3 {
+                font-size: 2.5rem !important;
+                margin-bottom: 0 !important;
+            }
+        }
+
+    }
+
+
+    // instruction area end
     &__container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
         justify-items: center;
         margin: 0 auto;
-        height: 90vh;
+        min-height: 100vh; // it will add more if needed /// else the default is max-100vh rigid..
+
 
         @include tablet {
             grid-template-columns: 1fr;
-            height: 100vh;
+            min-height: auto;
             padding-top: 10%;
 
             text-align: center;
@@ -86,6 +155,7 @@
 
             img {
                 width: 80%;
+                padding: 20px;
 
                 @include phone {
                     width: 100%;
@@ -102,6 +172,7 @@
             border-radius: 4px;
             color: $dark-navy;
             margin-top: 2rem;
+            @include samePad(.5rem);
             cursor: pointer;
             position: relative;
             transition: all 0.3s;
@@ -167,7 +238,7 @@
         font-size: 15px;
     }
 
-    .footer__left {
+    &__left {
 
 
         h1 {
@@ -185,7 +256,32 @@
 
     }
 
-    .footer__right {
+    &__right {
+        .social {
+            @extend %makeFlex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            button {
+                padding: 7px 14px;
+                /* border-radius: 34%; */
+                border-radius: 54%;
+                border: 2px solid $dark;
+                background: $dark-green;
+
+                // @include samePad(5px);
+                &:hover {
+                    background: $green;
+                    color: $dark;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+
+                }
+            }
+        }
 
 
         .number {
@@ -225,4 +321,50 @@
         font-size: 80%;
     }
 
+}
+
+
+.features {
+    background: $green;
+    padding: 5%;
+    @include samePad(10%);
+
+    .feature {
+        display: grid;
+        grid-template-columns: 0.75fr 1fr;
+        align-items: end;
+        align-items: center;
+
+        h2 {
+            @extend %makeFlex;
+            padding-right: 20%;
+            justify-content: flex-end;
+        }
+
+        h3 {
+            font-family: 'Concert One', cursive;
+        }
+
+    }
+
+}
+
+.container-grid {
+    background-color: red;
+    @include samePad(10%);
+
+    .feature {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+
+        h2 {
+            @extend %makeFlex;
+            padding-right: 20%;
+            justify-content: flex-end;
+        }
+    }
+
+    // display: flex;
+    // justify-content: flex-end;
 }

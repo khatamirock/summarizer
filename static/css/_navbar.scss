@@ -77,10 +77,6 @@ $same-width: 30px;
             &:hover {
                 color: $navy;
                 transition: color 0.4s ease-in-out;
-                // border: 3px solid $navy;
-                // border-radius: 10%;
-                // border-style: dotted;
-
             }
         }
 
@@ -98,4 +94,22 @@ $same-width: 30px;
 
 
 
+}
+
+
+
+.navbar-1 {
+    background: $green;
+
+    .navbar-brand {
+        font-size: 30px !important;
+        font-family: 'Press Start 2P', cursive !important;
+    }
+
+    .nav-item {
+        a {
+            font-family: 'Righteous', cursive;
+            font-size: 105%;
+        }
+    }
 }
