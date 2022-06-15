@@ -1,8 +1,9 @@
+import os
 from flask import Flask, jsonify, request, make_response, url_for, redirect, render_template
 import re
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-import os
+
 
 sent = ''
 
@@ -91,7 +92,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Hello, World!"
+    return render_template('info.html')
 
 
 @app.route('/sumry', methods=['POST'])
@@ -137,6 +138,11 @@ def instruct():
 @app.route('/info')
 def render():
     return render_template('info.html')
+
+
+@app.route('/sumup')
+def sumup():
+    return render_template('sumup.html')
 
 
 if __name__ == '__main__':

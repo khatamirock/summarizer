@@ -96,6 +96,36 @@
   font-size: 105%;
 }
 
+svgCustom {
+  width: 100%;
+  height: 100%;
+}
+
+.main2col .textdiv .upText,
+.main2col .textdiv2 .upText, .main2col .textdiv .buttons,
+.main2col .textdiv2 .buttons, .textdiv2 .butn, .acemain .acearea div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.acemain .acearea {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
 .footer__right .social, .features .feature h2, .container-grid .feature h2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -116,7 +146,7 @@
 
 .hero .instruction {
   background: #15133C;
-  color: #FFFFFF;
+  color: #FFF;
   padding: 1rem;
   text-align: center;
   font-size: 1.5rem;
@@ -277,9 +307,11 @@
 }
 
 .footer {
+  z-index: 5;
+  position: relative;
   background: #14C38E;
   padding: 10%;
-  color: #FFFFFF;
+  color: #FFF;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -304,7 +336,7 @@
 
 .footer a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #FFF;
   font-family: 'Press Start 2P', cursive;
   font-size: 15px;
 }
@@ -330,10 +362,10 @@
 }
 
 .footer__right .social button {
-  padding: 7px 14px;
-  /* border-radius: 34%; */
+  height: 40px;
+  width: 40px;
   border-radius: 54%;
-  border: 2px solid #15133C;
+  border: 4px solid #15133C;
   background: #14C38E;
 }
 
@@ -367,6 +399,18 @@
   }
 }
 
+.footer .imgka {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 25%;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-filter: invert(48%) sepia(79%);
+          filter: invert(48%) sepia(79%);
+  z-index: -1;
+}
+
 .copy {
   background-color: #15133C;
   padding: 2%;
@@ -383,7 +427,7 @@
 
 .features {
   background: #00FFAB;
-  padding: 5%;
+  padding: 3%;
   padding-left: 10%;
   padding-right: 10%;
   -webkit-box-align: center;
@@ -402,6 +446,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 8px;
 }
 
 .features .feature h2 {
@@ -409,6 +454,7 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin-bottom: 0px !important;
 }
 
 .features .feature h3 {
@@ -439,5 +485,266 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+.main2col {
+  width: 90%;
+  height: 78vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main2col .textdiv,
+.main2col .textdiv2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 0.4fr 2.5fr .5fr;
+      grid-template-rows: 0.4fr 2.5fr .5fr;
+  height: 90%;
+  width: 60%;
+}
+
+.main2col .textdiv .upText,
+.main2col .textdiv2 .upText {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 24px;
+  background-color: #65d9ee;
+  font-size: 30px;
+}
+
+.main2col .textdiv .upText h4,
+.main2col .textdiv2 .upText h4 {
+  margin-bottom: 0 !important;
+  font-size: 55%;
+}
+
+.main2col .textdiv .input,
+.main2col .textdiv2 .input {
+  border: none;
+  border-bottom: 2px solid #D8D8D8;
+  padding: 1.3rem;
+  font-size: 1rem;
+  border-top-left-radius: 4%;
+  border-right: 2px solid;
+  height: 100%;
+  resize: none;
+  background: #F5F5F5;
+}
+
+.main2col .textdiv .input:focus,
+.main2col .textdiv2 .input:focus {
+  outline: none;
+  border-bottom: 6px solid palevioletred;
+  color: #2a5f8d;
+  font-weight: 600;
+}
+
+.main2col .textdiv .input::-webkit-scrollbar,
+.main2col .textdiv2 .input::-webkit-scrollbar {
+  display: none;
+}
+
+.main2col .textdiv .buttons,
+.main2col .textdiv2 .buttons {
+  background-color: #89ebff;
+}
+
+.main2col .textdiv .buttons .btn,
+.main2col .textdiv2 .buttons .btn {
+  height: 70%;
+  width: 45%;
+  font-size: 55%;
+  margin: 0 20px;
+  font-weight: bold;
+  background-color: palevioletred;
+}
+
+.main2col .textdiv .buttons .btn:hover,
+.main2col .textdiv2 .buttons .btn:hover {
+  background-color: #f5687f;
+  -webkit-box-shadow: 2px 2px 0px black;
+          box-shadow: 2px 2px 0px black;
+}
+
+.linebreak {
+  position: relative;
+  margin: 0 auto;
+  width: 40%;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .linebreak {
+    padding-bottom: 100px;
+  }
+}
+
+.textdiv2 .butn {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 63%;
+  width: 73%;
+  background-color: #2a5f8d;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  border-radius: 100px;
+}
+
+.textdiv2 .butn h6 {
+  font-size: 40%;
+  color: #FFF;
+  margin-bottom: 0 !important;
+}
+
+.textdiv2 .butn input {
+  width: 90%;
+}
+
+.textdiv2 .input {
+  border-right: 0 solid !important;
+  border-top-right-radius: 4%;
+  border-top-left-radius: 0 !important;
+}
+
+.acemain {
+  height: 80vh;
+  position: relative;
+}
+
+.acemain .imge {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 15%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-filter: invert(48%) sepia(79%);
+          filter: invert(48%) sepia(79%);
+  z-index: -1;
+}
+
+.acemain .imgou {
+  position: absolute;
+  top: 211px;
+  left: 80px;
+  width: 20%;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+  -webkit-filter: invert(48%) sepia(79%);
+          filter: invert(48%) sepia(79%);
+  z-index: -1;
+}
+
+.acemain .imgno {
+  position: absolute;
+  top: -45%;
+  left: 74%;
+  width: 20%;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+  -webkit-filter: invert(48%) sepia(79%);
+          filter: invert(48%) sepia(79%);
+  z-index: -1;
+}
+
+.acemain .imgka {
+  position: absolute;
+  top: 25%;
+  left: 75%;
+  width: 25%;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-filter: invert(48%) sepia(79%);
+          filter: invert(48%) sepia(79%);
+  z-index: -1;
+}
+
+.acemain .acearea {
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.acemain .acearea div {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 20px;
+  -webkit-box-shadow: 6px 6px 10px #949292;
+          box-shadow: 6px 6px 10px #949292;
+  background-color: wheat;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+.acemain .acearea div img {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .acemain .acearea {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .acemain .acearea div {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .acemain .imge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-filter: invert(48%) sepia(79%);
+            filter: invert(48%) sepia(79%);
+    z-index: -1;
+  }
+  .acemain .imgou {
+    position: absolute;
+    top: 211px;
+    left: 0;
+    width: 20%;
+    -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
+    -webkit-filter: invert(48%) sepia(79%);
+            filter: invert(48%) sepia(79%);
+    z-index: -1;
+  }
+  .acemain .imgno {
+    position: absolute;
+    top: -8%;
+    left: 68%;
+    width: 20%;
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+    -webkit-filter: invert(48%) sepia(79%);
+            filter: invert(48%) sepia(79%);
+    z-index: -1;
+  }
+  .acemain .imgka {
+    position: absolute;
+    top: 45%;
+    left: 75%;
+    width: 25%;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-filter: invert(48%) sepia(79%);
+            filter: invert(48%) sepia(79%);
+    z-index: -1;
+  }
 }
 /*# sourceMappingURL=styl.css.map */
