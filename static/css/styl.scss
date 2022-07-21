@@ -1,13 +1,16 @@
 @import 'navbar';
 @import 'colors';
 @import 'mixandExd';
-
+@import 'dropDown';
+@import 'maincol-txtFld';
 
 * {
     margin: 0;
     padding: 0;
 
 }
+
+
 
 .hero {
     background: $lite;
@@ -370,92 +373,6 @@
 
 
 
-.main2col {
-    width: 90%;
-    height: 78vh;
-    display: flex;
-
-
-    .textdiv,
-    .textdiv2 {
-
-        display: grid;
-        // flex-direction: column;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.4fr 2.5fr .5fr;
-
-        height: 90%;
-        width: 60%;
-
-
-        .upText {
-            @extend %makeflexer;
-            justify-content: flex-start;
-            padding-left: 24px;
-            background-color: #65d9ee;
-            font-size: 30px;
-
-            h4 {
-                margin-bottom: 0 !important;
-                font-size: 55%;
-            }
-
-        }
-
-        .input {
-            border: none;
-            border-bottom: 2px solid $mid-gray;
-            padding: 1.3rem;
-            font-size: 1rem;
-            border-top-left-radius: 4%;
-            border-right: 2px solid;
-            height: 100%;
-
-            resize: none;
-            background: $light-gray;
-
-            &:focus {
-                outline: none;
-                border-bottom: 6px solid palevioletred;
-                color: $blue;
-                font-weight: 600;
-            }
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
-
-        }
-
-        // .buttons2
-        .buttons {
-            background-color: #89ebff;
-            @extend %makeflexer;
-
-            .btn {
-                height: 70%;
-                width: 45%;
-                font-size: 55%;
-
-                margin: 0 20px;
-
-                font-weight: bold;
-                background-color: palevioletred;
-
-                // padding: 10px 10px;
-                &:hover {
-                    background-color: rgb(245, 104, 127);
-                    // add shadow
-                    box-shadow: 2px 2px 0px black;
-                }
-            }
-
-
-        }
-
-    }
-}
-
 
 .linebreak {
     position: relative;
@@ -468,36 +385,19 @@
     }
 }
 
-.textdiv2 {
-    .butn {
+.practical {
+    img {
+        width: 50%;
+        height: 50%;
 
-        @extend %makeflexer;
-        justify-content: space-around;
+        @include tablet {
+            width: 85%;
 
-        height: 63%;
-        width: 73%;
-        background-color: #2a5f8d;
-        @include padder-x(10px);
-        border-radius: 100px;
-
-        h6 {
-            // margin-top: 2%   ;
-            font-size: 40%;
-            color: $white;
-            margin-bottom: 0 !important;
         }
-
-        input {
-            width: 90%;
-        }
-    }
-
-    .input {
-        border-right: 0 solid !important;
-        border-top-right-radius: 4%;
-        border-top-left-radius: 0 !important;
     }
 }
+
+
 
 .acemain {
     height: 80vh;

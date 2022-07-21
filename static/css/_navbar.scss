@@ -6,8 +6,8 @@ $same-width: 30px;
 
 @mixin samePad($width) {
 
-    padding-left: $width ;
-    padding-right: $width;
+    padding-left: $width  !important;
+    padding-right: $width  !important;
     align-items: center;
 }
 
@@ -83,27 +83,19 @@ $same-width: 30px;
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
 
 .navbar-1 {
-    background: $green;
+    // background: $green;
 
     .navbar-brand {
-        font-size: 30px !important;
-        font-family: 'Press Start 2P', cursive !important;
+        font-size: 200% !important;
+        font-weight: bold;
+        letter-spacing: 2px;
+
+        font-family: 'Righteous', cursive !important;
     }
 
     .nav-item {

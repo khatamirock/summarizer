@@ -33,7 +33,7 @@
 <body class="hero">
     <nav class="navbar navbar-1 navbar-expand-lg navbar-light ">
         <div class="container-fluid    ">
-            <a class="navbar-brand" href="#">sum_Up</a>
+            <a class="navbar-brand" href="#">sum_<span style="color:red;">U</span>p</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,11 +41,13 @@
             <div class="collapse navbar-collapse  " id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="http://test-summ.herokuapp.com/info">HOME</a>
+                        <a class="nav-link" aria-current="page" href="http://test-summ.herokuapp.com/info">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT</a>
+                        <a class="nav-link" href="{{ url_for('index') }}">PITCH</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">CONTACT</a>
                     </li>
 
                 </ul>
@@ -63,7 +65,8 @@
                 <div class="upText text-uppercase text-center ">
                     <h4>Summarizer</h4>
                 </div>
-                <textarea placeholder="Enter text to SUMMARIZE" class="input"></textarea>
+                <textarea placeholder="Enter text to SUMMARIZE & press  
+>> CTRL+ENTR key to Summarize" class="input"></textarea>
 
                 <div class="buttons">
                     <button class="btn btn-primary">SUMMARIZE >> </button>
@@ -74,16 +77,30 @@
 
             <div class="textdiv2">
                 <div class="upText ">
+                    <div class="dropdown">
+                        <div class="select">
+                            <span class="selected">select</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="menu">
+                            <li>TxtRank</li>
+                            <li>LSA</li>
 
+                        </ul>
+                    </div>
                     <div class="butn">
                         <h6>summary length</h6>
                         <div class="slider">
-                            <input type="range" min="3" max="8">
+                            <input id="slder" type="range" min="4" max="7">
                         </div>
                     </div>
 
 
                 </div>
+
+
+
+
                 <textarea placeholder="SUMMARIZED result" class="input"></textarea>
                 <div class="buttons">
 
@@ -104,7 +121,7 @@
 
     <div class="practical pt-4 text-center">
         <h2>here's how the magic works </h2>
-        <img src="" alt="add images-1-1-1-">
+        <img class="py-5" src="../static/images/demo.png" alt="add images-1-1-1-">
     </div>
 
     <img class=" d-flex  linebreak" src="../static/images/linbr.svg" alt="">

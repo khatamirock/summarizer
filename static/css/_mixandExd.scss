@@ -22,13 +22,16 @@
 
 }
 
+
+
+
 @mixin svgCustom($posx, $posy, $rotate, $wid) {
     position: absolute;
     top: $posy;
     left: $posx;
     width: $wid;
     transform: rotate($rotate);
-    // background-color: $dark-green;
+
     filter: invert(48%) sepia(79%);
     z-index: -1;
 }
