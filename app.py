@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request, make_response, url_for, redirect, ren
 import re
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-
+import random
 
 sent = ''
 
@@ -70,19 +70,30 @@ def get_top_sentences(pr_vector, sentences, number):
         # it means from big to small... the upper thing was for small to big >>  ascending...............
         sorted_pr.reverse()
         # print(sorted_pr)
-        sorted_pr = sorted_pr[:10]
+        sorted_pr = sorted_pr[:12]
         # print(sorted_pr)
         index = 0
         sorted_pr.sort()
         # print(sorted_pr)
-        for epoch in range(number):
+        left = number-(number//2+1)
+        for epoch in range(number//2+1):
             sent = sentences[sorted_pr[index]]
             # sent = normalize_whitespace(sent)
             top_sentences += sent+' । '
             if index % 2 == 0:
                 top_sentences += '\n'
             index += 1
+#       print(top_sentences)
+        sorted_pr = sorted_pr[left+1:]
+        random.shuffle(sorted_pr)
 
+        for epoch in range(left):
+            sent = sentences[sorted_pr[epoch]]
+            # sent = normalize_whitespace(sent)
+            top_sentences += sent+' । '
+            if index % 2 == 0:
+                top_sentences += '\n'
+            index += 1
     return top_sentences
 
 
