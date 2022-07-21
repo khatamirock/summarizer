@@ -56,7 +56,37 @@ btn.addEventListener('click', btnListen);
 function btnListen() {
     docReceived.disabled = false;
     btn.textContent = 'SUMMARIZED';
-    docReceived.value = doctoSend.value;
+
+
+
+    var data = JSON.stringify({
+        "doc": doctoSend.value,
+        "ratio": 5
+
+    });
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            console.log(this.responseText);
+            dat = JSON.parse(this.responseText);
+            docReceived.value = dat['Summery'];
+        }
+    });
+
+    xhr.open("POST", "http://test-summ.herokuapp.com/sumry");
+    xhr.setRequestHeader("content-type", "application/json");
+    xhr.setRequestHeader("cache-control", "no-cache");
+
+    xhr.send(data);
+
+
+
+
+
 
 }
 

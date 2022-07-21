@@ -1,5 +1,5 @@
 import os
-from xml.dom.minidom import Document
+
 from flask import Flask, jsonify, request, make_response, url_for, redirect, render_template
 from pyfiles.models import model2
 from pyfiles.modelChose import case
@@ -21,6 +21,7 @@ def index():
 @app.route('/sumry', methods=['POST'])
 def sumry():
     data = request.get_json()
+    # print(data)
     DOCUMENT = data['doc']
     firstLen = len(DOCUMENT.split())
     rat = data['ratio']
