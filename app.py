@@ -96,7 +96,7 @@ def index():
 
 
 @app.route('/sumry', methods=['POST'])
-@cross_origin()
+
 def sumry():
     data = request.get_json()
     DOCUMENT = data['doc']
