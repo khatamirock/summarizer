@@ -31,28 +31,6 @@ btn.addEventListener('click', btnListen);
 
 
 
-
-// var settings = {
-//     "async": true,
-//     "crossDomain": true,
-//     "url": "http://test-summ.herokuapp.com/sumry",
-//     "method": "POST",
-//     "headers": {
-//         "content-type": "application/json",
-//         "cache-control": "no-cache",
-//         "postman-token": "0c5b7dfc-c556-86db-ccd4-0a2ce622cd7e"
-//     },
-//     "processData": false,
-//     "data": "{\"doc\":\"Quillbot's summarizer wants to change how you read! Instead of reading through loads of documents, you can get a short annotated summary or bullet points with all the key information.\",\n\"ratio\":1\n\n}"
-// }
-
-// document.ajax(settings).done(function (response) {
-//     console.log(response);
-// });
-// docReceived.value = response;
-
-
-
 function btnListen() {
     docReceived.disabled = false;
     btn.textContent = 'SUMMARIZED';
@@ -61,7 +39,8 @@ function btnListen() {
 
     var data = JSON.stringify({
         "doc": doctoSend.value,
-        "ratio": 5
+        "ratio": 5,
+        "model": 2
 
     });
 
@@ -77,7 +56,7 @@ function btnListen() {
         }
     });
 
-    xhr.open("POST", "http://test-summ.herokuapp.com/sumry");
+    xhr.open("POST", "/sumry");
     xhr.setRequestHeader("content-type", "application/json");
     xhr.setRequestHeader("cache-control", "no-cache");
 
