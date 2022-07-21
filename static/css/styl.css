@@ -584,6 +584,17 @@ svgCustom {
   }
 }
 
+.practical img {
+  width: 50%;
+  height: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .practical img {
+    width: 85%;
+  }
+}
+
 .textdiv2 .butn {
   -ms-flex-pack: distribute;
       justify-content: space-around;
