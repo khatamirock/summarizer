@@ -60,7 +60,7 @@ def run_page_rank(similarity_matrix):
 
 def get_top_sentences(pr_vector, sentences, number):
 
-    top_sentences = []
+    top_sentences = ''
 
     if pr_vector is not None:
 
@@ -78,7 +78,9 @@ def get_top_sentences(pr_vector, sentences, number):
         for epoch in range(number):
             sent = sentences[sorted_pr[index]]
             # sent = normalize_whitespace(sent)
-            top_sentences.append(sent)
+            top_sentences += sent+' । '
+            if index % 2 == 0:
+                top_sentences += '\n'
             index += 1
 
     return top_sentences
@@ -96,7 +98,6 @@ def index():
 
 
 @app.route('/sumry', methods=['POST'])
-
 def sumry():
     data = request.get_json()
     DOCUMENT = data['doc']
