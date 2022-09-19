@@ -202,11 +202,8 @@ def render():
 
 @app.route('/sumup')
 def sumup():
-    if session and 'username' in session:
 
-        return render_template('sumup.html')
-    else:
-        return redirect(url_for('login'))
+    return render_template('sumup.html')
 
 
 if __name__ == '__main__':
