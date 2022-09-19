@@ -140,13 +140,13 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/signUp')
-def signUp():
+@app.route('/signup')
+def signup():
     if request.method == 'POST':
         unam = request.form['username']
         email = request.form['email']
         pas = request.form['password']
-        print(unam, pas)
+        print(unam, pas, email)
         usr = logger['user'].find_one({'username': unam})
         # # print(usr['password'], usr['username'], 'POST---goinggg')
 
@@ -210,8 +210,5 @@ def sumup():
 
 
 if __name__ == '__main__':
-
     app.config['SECRET_KEY'] = 'robret-kohler'
-
-    # app.run(host='0.0.0.0', port=8080)
     app.run(debug=True)
