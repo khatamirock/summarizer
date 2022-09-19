@@ -1,7 +1,7 @@
 import email
 from operator import length_hint
 import os
-from flask import Flask, jsonify, request, make_response, url_for, redirect, render_template, session
+from flask import Flask, jsonify, request, url_for, redirect, render_template, session
 import re
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -148,11 +148,12 @@ def signup():
         pas = request.form['password']
         print(unam, pas, email)
         usr = logger['user'].find_one({'username': unam})
-        # # print(usr['password'], usr['username'], 'POST---goinggg')
 
-        if usr['password'] == pas:
-            session['username'] = unam
-            return sumup()
+        # if usr['password'] == pas:
+        #     session['username'] = unam
+        #     return sumup()
+    else:
+        return render_template('signup-sup.html')
 
 
 @app.route('/sumry', methods=['POST'])
@@ -202,8 +203,10 @@ def render():
 
 @app.route('/sumup')
 def sumup():
-
-    return render_template('sumup.html')
+    if 'username' in session:
+        return render_template('sumup.html')
+    else:
+        return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
