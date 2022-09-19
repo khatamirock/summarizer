@@ -82,7 +82,7 @@ def get_top_sentences(pr_vector, sentences, number):
         index = 0
         sorted_pr.sort()
         # print(sorted_pr)
-        left = number-(number//2+1)
+        left = number-(number//2)
         for epoch in range(number//2+1):
             sent = sentences[sorted_pr[index]]
             # sent = normalize_whitespace(sent)
