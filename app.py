@@ -1,3 +1,4 @@
+import email
 from operator import length_hint
 import os
 from flask import Flask, jsonify, request, make_response, url_for, redirect, render_template, session
@@ -137,6 +138,21 @@ def login():
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
+
+
+@app.route('/signUp')
+def signUp():
+    if request.method == 'POST':
+        unam = request.form['username']
+        email = request.form['email']
+        pas = request.form['password']
+        print(unam, pas)
+        usr = logger['user'].find_one({'username': unam})
+        # # print(usr['password'], usr['username'], 'POST---goinggg')
+
+        if usr['password'] == pas:
+            session['username'] = unam
+            return sumup()
 
 
 @app.route('/sumry', methods=['POST'])
