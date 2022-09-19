@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae76f089-23f7-4908-8a22-88116e763810" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/name_strs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/_mixandExd.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/_mixandExd.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/_navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styl.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styl.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styl.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sumup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sumup.html" afterDir="false" />
-    </list>
+    <list default="true" id="ae76f089-23f7-4908-8a22-88116e763810" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

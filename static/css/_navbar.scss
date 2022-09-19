@@ -112,4 +112,34 @@ $same-width: 30px;
             font-size: 105%;
         }
     }
+
+    .navbar-nav {
+        display: flex !important;
+        align-items: center;
+    }
+
+    button {
+        font-size: 1rem;
+        background-color: black;
+        padding: 14px 32px;
+        border: none;
+        border-radius: 4px;
+        color: $dark-navy;
+
+        @include samePad(.5rem);
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s;
+        outline: none;
+
+        a {
+            position: relative;
+            z-index: 2;
+            font-family: 'Righteous', cursive;
+
+            font-weight: bold;
+            // color: $green;
+            text-decoration: none;
+        }
+    }
 }

@@ -1,9 +1,16 @@
+from operator import length_hint
 import os
-from flask import Flask, jsonify, request, make_response, url_for, redirect, render_template
+from flask import Flask, jsonify, request, make_response, url_for, redirect, render_template, session
 import re
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 import random
+from pymongo import mongo_client
+
+conn_str = '''mongodb+srv://ronin:roninrocK1@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''
+client = mongo_client.MongoClient(conn_str)
+logger = client['login']
+
 
 sent = ''
 
@@ -108,6 +115,30 @@ def index():
     return render_template('info.html')
 
 
+# loginScreen!!!
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        unam = request.form['username']
+        pas = request.form['password']
+        print(unam, pas)
+        usr = logger['user'].find_one({'username': unam})
+        # # print(usr['password'], usr['username'], 'POST---goinggg')
+
+        if usr['password'] == pas:
+            session['username'] = unam
+            return sumup()
+    else:
+        return render_template('login-sup.html')
+
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('index'))
+
+
 @app.route('/sumry', methods=['POST'])
 def sumry():
     data = request.get_json()
@@ -155,9 +186,16 @@ def render():
 
 @app.route('/sumup')
 def sumup():
-    return render_template('sumup.html')
+    if session and 'username' in session:
+
+        return render_template('sumup.html')
+    else:
+        return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
+
+    app.config['SECRET_KEY'] = 'robret-kohler'
+
     # app.run(host='0.0.0.0', port=8080)
     app.run(debug=True)
