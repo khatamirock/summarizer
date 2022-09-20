@@ -8,11 +8,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import random
 from pymongo import mongo_client
 
-mpass = os.environ['Mpass']
+# mpass = os.environ['Mpass']
 
 
-conn_str = '''mongodb+srv://ronin:{}@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''.format(
-    mpass)
+conn_str = '''mongodb+srv://ronin:roninrocK1@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''
 client = mongo_client.MongoClient(conn_str)
 logger = client['login']
 
@@ -114,8 +113,6 @@ def get_top_sentences(pr_vector, sentences, number):
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'robret-kohler'
-# app.config.from_object(os.environ['APP_SETTINGS'])
-print(os.environ['Mpass'])
 
 
 @app.route('/')
@@ -128,7 +125,7 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        print(os.environ['Mpass'])
+
         unam = request.form['username']
         pas = request.form['password']
         print(unam, pas)
@@ -144,7 +141,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    print(os.environ['Mpass'])
+
     session.pop('username', None)
     return render_template('login-sup.html')
 
@@ -155,18 +152,18 @@ def signup():
         unam = request.form['username']
         email = request.form['email']
         pas = request.form['password']
-        print(unam, pas, email)
+        # print(unam, pas, email)
         usr = logger['user'].find_one({'username': unam})
         if usr or unam == '' or pas == '' or email == '':
             return render_template('login-sup.html')
         else:
             id = logger['user'].count_documents({})+1
             logger['user'].insert_one(
-                {'id': id, 'username': uam, 'password': pas,
+                {'id': id, 'username': unam, 'password': pas,
                  'email': email})
-            return render_template('login-sup.html')
+            return login()
     else:
-        return render_template('signup-sup.html')
+        return login()
 
 
 @app.route('/sumry', methods=['POST'])
