@@ -137,10 +137,10 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('username', None)
-    return url_for('login')
+    return render_template('login-sup.html')
 
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
         unam = request.form['username']
