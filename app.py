@@ -8,7 +8,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import random
 from pymongo import mongo_client
 
-conn_str = '''mongodb+srv://ronin:roninrocK1@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''
+mpass = os.environ['Mpass']
+
+
+conn_str = '''mongodb+srv://ronin:{}@cluster0.mp1aw.mongodb.net/login?retryWrites=true&w=majority'''.format(
+    mpass)
 client = mongo_client.MongoClient(conn_str)
 logger = client['login']
 
