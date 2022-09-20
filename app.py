@@ -137,7 +137,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('username', None)
-    return redirect(url_for('login'))
+    return url_for('login')
 
 
 @app.route('/signup')
