@@ -110,6 +110,8 @@ def get_top_sentences(pr_vector, sentences, number):
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'robret-kohler'
+app.config.from_object(os.environ['APP_SETTINGS'])
+print(os.environ['APP_SETTINGS'])
 
 
 @app.route('/')
@@ -149,10 +151,14 @@ def signup():
         pas = request.form['password']
         print(unam, pas, email)
         usr = logger['user'].find_one({'username': unam})
-
-        # if usr['password'] == pas:
-        #     session['username'] = unam
-        #     return sumup()
+        if usr or unam == '' or pas == '' or email == '':
+            return render_template('login-sup.html')
+        else:
+            id = logger['user'].count_documents({})+1
+            logger['user'].insert_one(
+                {'id': id, 'username': uam, 'password': pas,
+                 'email': email})
+            return render_template('login-sup.html')
     else:
         return render_template('signup-sup.html')
 
