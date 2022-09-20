@@ -110,8 +110,8 @@ def get_top_sentences(pr_vector, sentences, number):
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'robret-kohler'
-app.config.from_object(os.environ['APP_SETTINGS'])
-print(os.environ['APP_SETTINGS'])
+# app.config.from_object(os.environ['APP_SETTINGS'])
+print(os.environ['Mpass'])
 
 
 @app.route('/')
