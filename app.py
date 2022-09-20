@@ -124,6 +124,7 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        print(os.environ['Mpass'])
         unam = request.form['username']
         pas = request.form['password']
         print(unam, pas)
@@ -139,6 +140,7 @@ def login():
 
 @app.route('/logout')
 def logout():
+    print(os.environ['Mpass'])
     session.pop('username', None)
     return render_template('login-sup.html')
 
