@@ -109,6 +109,7 @@ def get_top_sentences(pr_vector, sentences, number):
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'robret-kohler'
 
 
 @app.route('/')
@@ -210,5 +211,5 @@ def sumup():
 
 
 if __name__ == '__main__':
-    app.config['SECRET_KEY'] = 'robret-kohler'
+
     app.run(debug=True)
