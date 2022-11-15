@@ -97,13 +97,13 @@ def get_top_sentences(pr_vector, sentences, number):
 #         sorted_pr = sorted_pr[left+1:]
 #         random.shuffle(sorted_pr)
 
-        for epoch in range(left):
-            sent = sentences[sorted_pr[epoch]]
-            # sent = normalize_whitespace(sent)
-            top_sentences += sent+' । '
-            if index % 2 == 0:
-                top_sentences += '\n'
-            index += 1
+#         for epoch in range(left):
+#             sent = sentences[sorted_pr[epoch]]
+#             # sent = normalize_whitespace(sent)
+#             top_sentences += sent+' । '
+#             if index % 2 == 0:
+#                 top_sentences += '\n'
+#             index += 1
     return top_sentences
 
 
